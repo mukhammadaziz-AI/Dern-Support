@@ -310,6 +310,10 @@ app.delete('/api/orders/:id', async (req, res) => {
     }
 });
 
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => console.log("MongoDB ulandi"))
+  .catch(err => console.error("Ulanishda xatolik:", err));
+
 app.listen(PORT, () => {
     console.log(`Server http://localhost:${PORT} da ishlayapti ✅`);
 });
