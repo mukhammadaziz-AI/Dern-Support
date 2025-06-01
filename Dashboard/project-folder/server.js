@@ -310,6 +310,11 @@ app.delete('/api/orders/:id', async (req, res) => {
     }
 });
 
+mongoose.connect('mongodb+srv://muhammadaziz:mypasswordNQpxM66YpRs1Jndt@muhammadaziz.9iinnzz.mongodb.net/Dern-Suport?retryWrites=true&w=majority&appName=Muhammadaziz', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+
 const uri = process.env.MONGODB_URI;
 
 mongoose.connect(uri, { 
