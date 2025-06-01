@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const session = require('express-session');
+require('dotenv').config();
 
 const app = express();
 const PORT = 3600;
@@ -310,20 +311,14 @@ app.delete('/api/orders/:id', async (req, res) => {
     }
 });
 
-mongoose.connect('mongodb+srv://muhammadaziz:mypasswordNQpxM66YpRs1Jndt@muhammadaziz.9iinnzz.mongodb.net/Dern-Suport?retryWrites=true&w=majority&appName=Muhammadaziz', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-
 const uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri, { 
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
-}).then(() => {
-  console.log('MongoDB connected');
-}).catch(err => {
-  console.error('MongoDB connection error:', err);
-});
+  useUnifiedTopology: true,
+})
+.then(() => console.log("MongoDB bilan bog'landi ✅"))
+.catch((err) => console.error("MongoDB connection error:", err));
 
 app.listen(PORT, () => {
     console.log(`Server http://localhost:${PORT} da ishlayapti ✅`);
