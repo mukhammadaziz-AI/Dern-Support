@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijoz - Tizimga kirish</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/user-login.css">
+</head>
+
+<body>
+    <form action="/user-login" method="post">
+        <div class="login-container">
+            <h2>Shaxsiy kabinet</h2>
+            <p>Mijoz - hisobingizga kirish uchun quyidagilarni to'ldiring</p>
+
+            <div class="form-group">
+                <label for="email">E-pochta</label>
+                <input type="email" id="email" name="email" placeholder="Emailingiz ..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Parol</label>
+                <input type="password" id="password" name="password" placeholder="********" required>
+            </div>
+
+            <div class="form-options">
+                <label><input type="checkbox"> Meni eslab qoling</label>
+                <a href="#">Parolni unutdingizmi?</a>
+            </div>
+
+            <button type="submit" class="login-button">Tizimga kirish</button>
+
+            <div class="signup-link">
+                Shaxsiy kabinetingiz yo'qmi? <a href="/registration">Ro'yxatdan o'tish</a>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>

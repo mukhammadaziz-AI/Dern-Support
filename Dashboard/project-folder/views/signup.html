@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dern Support - Sign Up</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <link rel="stylesheet" href="./assets/css/signup.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container" id="register-container">
+            <h2>Ro'yxatdan o'tish</h2>
+
+            <form id="register-form" method="post" action="/register">
+                <label for="fullname">To'liq ism</label>
+                <input type="text" name="fullname" id="fullname" placeholder="To'liq ismingiz ..." required>
+
+                <label for="email">E-pochta manzili</label>
+                <input type="email" name="email" id="email" placeholder="example@mail.com" required>
+
+                <label for="phone">Telefon raqam</label>
+                <input type="number" name="phone" id="phone" placeholder="+998 90 123 45 67" required>
+
+                <label for="password">Parol</label>
+                <input type="password" name="password" id="password" placeholder="********" required>
+
+                <label for="confirm" class="confirm-password">Parolni tasdiqlang</label>
+                <input type="password" name="confirmPassword" id="confirm" placeholder="********" required>
+
+                <label class="account-type">Hisob turi</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="accountType" value="jismoniy" checked
+                            onclick="toggleCompany(false)"> Jismoniy</label>
+                    <label><input type="radio" name="accountType" value="biznes" onclick="toggleCompany(true)">
+                        Biznes</label>
+                </div>
+
+                <div id="business-form" class="hidden">
+                    <label for="company">Kompaniya ismi</label>
+                    <input type="text" name="company" id="company" placeholder="Dern Support">
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="policy"> Men <a href="/term-conditions" class="politics">Xizmat
+                            Shartlari</a>
+                        va <a href="/privacy-policy" class="politics">Maxfiylik Siyosatiga</a> roziman.
+                    </label>
+                </div>
+
+                <button type="submit">Ro'yxatdan o'tish</button>
+
+                <div class="link">
+                    Hisobingiz bormi? <a href="/user-login" class="login">Tizimga kirish</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./assets/js/signup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE-edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- CSS -->
+   <link rel="stylesheet" href="./assets/css/admin-panel.css">
+   <!-- Boxicons CSS -->
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <!-- Chart.js -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <title>Dashboard</title>
+</head>
+
+<body>
+   <nav class="sidebar close">
+      <header>
+         <div class="image-text">
+            <span class="image">
+               <img src="./assets/images/master-logo.png" alt="logo">
+            </span>
+
+            <div class="text header-text">
+               <h3 class="dashboard">Admin paneli</h3>
+               <span
+                  class="admin-name"></span><!-- Bu yerga foydalanuvchini ismi avtomatik qo'shiladi. Qo'shilganda Familiyasi to'liq yoziladi. Ismini bosh harfi yoziladi. Masalan, "Malikov Sh." -->
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+         </div>
+      </header>
+
+      <div class="menu-bar">
+         <div class="menu">
+
+            <ul class="menu-links">
+
+               <li class="nav-link">
+                  <a href="#">
+                     <i class='bx bx-home-alt icon'></i>
+                     <span class="text nav-text">Bosh sahifa</span>
+                  </a>
+               </li>
+
+               <li class="nav-link">
+                  <a href="#" id="productsLink">
+                     <i class='bx bx-extension icon'></i>
+                     <span class="text nav-text">Mahsulotlar</span>
+                  </a>
+               </li>
+
+               <li class="nav-link">
+                  <a href="#">
+                     <!-- <i class='bx bx-git-pull-request icon'></i> -->
+                     <i class='bx bx-cart-add icon'></i>
+                     <span class="text nav-text">Buyurtmalar</span>
+                  </a>
+               </li>
+
+               <li class="nav-link">
+                  <a href="#">
+                     <i class='bx bxs-megaphone icon'></i>
+                     <span class="text nav-text">E'lonlar</span>
+                  </a>
+               </li>
+
+               <li class="nav-link">
+                  <a href="#">
+                     <i class='bx bx-group icon'></i>
+                     <span class="text nav-text">Foydalanuvchi</span>
+                  </a>
+               </li>
+
+               <li class="nav-link">
+                  <a href="#">
+                     <i class='bx bx-line-chart icon'></i>
+                     <span class="text nav-text">Statistika</span>
+                  </a>
+               </li>
+            </ul>
+         </div>
+
+         <div class="bottom-content">
+            <li class="nav-link logout">
+               <a href="#">
+                  <i class='bx bx-log-out icon'></i>
+                  <span class="text nav-text">Chiqish</span>
+               </a>
+            </li>
+
+            <li class="mode">
+               <div class="moon-sun">
+                  <i class="bx bx-moon icon moon"></i>
+                  <i class="bx bx-sun icon sun"></i>
+               </div>
+               <span class="mode-text text">Tungi rejim</span>
+
+               <div class="toggle-switch">
+                  <span class="switch"></span>
+               </div>
+            </li>
+         </div>
+      </div>
+   </nav>
+
+   <section class="home">
+      <div class="container" id="dashboardContent">
+         <div class="header">
+            <h1>Boshqaruv paneli</h1>
+            <p>Xush kelibsiz, Admin!</p>
+         </div>
+         <div class="stats-grid">
+            <div class="stat-card">
+               <h1 class="info-icon">
+                  <i class='bx bx-calendar-check'></i>
+               </h1>
+               <h3>1</h3>
+               <p>Jami buyurtmalar</p>
+            </div>
+            <div class="stat-card">
+               <h1 class="info-icon">
+                  <i class='bx bx-check-shield'></i>
+               </h1>
+               <h3>0</h3>
+               <p>Bajarilgan buyurtmalar</p>
+            </div>
+            <div class="stat-card">
+               <h1 class="info-icon">
+                  <i class='bx bx-group'></i>
+               </h1>
+               <h3>3</h3>
+               <p>Jami mijozlar</p>
+            </div>
+            <div class="stat-card">
+               <h1 class="info-icon">
+                  <i class='bx bx-signal-4'></i>
+               </h1>
+               <h3>0%</h3>
+               <p>Qabul qilish darajasi</p>
+            </div>
+         </div>
+
+         <div class="main-content">
+            <div class="panel">
+               <h2>Tezkor amallar</h2>
+               <div class="action-buttons">
+                  <button class="btn btn-primary">
+                     <span>
+                        <i class='bx bx-calendar-check'></i>
+                     </span>
+                     Buyurtmalarni boshqarish
+                  </button>
+                  <button class="btn btn-secondary">
+                     <span>
+                        <i class='bx bxs-user-detail'></i>
+                     </span>
+                     Mijozlarni boshqarish
+                  </button>
+               </div>
+            </div>
+
+            <div class="panel">
+               <h2>Holati haqida umumiy ma'lumot</h2>
+               <ul class="status-list">
+                  <li class="status-item">
+                     <span>Tizim holati</span>
+                     <span style="margin-left: auto;">Faol</span>
+                     <span class="status-icon">
+                        <i class='bx bxs-circle' style='color:#17ff00'></i>
+                     </span>
+                  </li>
+                  <li class="status-item">
+                     <span>API holati</span>
+                     <span style="margin-left: auto;">Faol</span>
+                     <span class="status-icon">
+                        <i class='bx bxs-circle' style='color:#17ff00'></i>
+                     </span>
+                  </li>
+                  <li class="status-item">
+                     <span>Ma'lumotlar bazasi holati</span>
+                     <span style="margin-left: auto;">Faol</span>
+                     <span class="status-icon">
+                        <i class='bx bxs-circle' style='color:#17ff00'></i>
+                     </span>
+                  </li>
+               </ul>
+            </div>
+
+            <div class="panel">
+               <h2>So'nggi faoliyat</h2>
+               <ul class="activity-list">
+                  <li class="activity-item">
+                     <span class="activity-icon">
+                        <i class='bx bx-time-five issc'></i>
+                     </span>
+                     <div>
+                        <div>Tizimga kirdi</div>
+                        <small>Hozir</small>
+                     </div>
+                  </li>
+                  <li class="activity-item">
+                     <span class="activity-icon">
+                        <i class='bx bx-time-five issc'></i>
+                     </span>
+                     <div>
+                        <div>Boshqaruv panelini ko'rdi</div>
+                        <small>2 daqiqa oldin</small>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+
+      <div id="productsContent" class="container" style="display: none;">
+         <div class="products-header">
+            <div class="products-title">
+               <h1>Mahsulotlar</h1>
+               <p>Mahsulotlarni ko'rib chiqing va boshqaring</p>
+            </div>
+            <div class="products-actions">
+               <button class="btn btn-primary">
+                  <i class='bx bx-plus'></i>
+                  Mahsulot qo'shish
+               </button>
+               <button class="btn btn-outline">
+                  <i class='bx bx-plus'></i>
+                  Kategoriya qo'shish
+               </button>
+            </div>
+         </div>
+
+         <div class="products-filters">
+            <div class="search-box">
+               <i class='bx bx-search'></i>
+               <input type="text" placeholder="Mahsulotlarni qidiring...">
+            </div>
+            <div class="filter-group">
+               <button class="filter-btn">
+                  <i class='bx bx-sort'></i>
+                  <span>Barcha zona</span>
+                  <i class='bx bx-chevron-down'></i>
+               </button>
+               <button class="filter-btn">
+                  <span>Nomi (A-Z)</span>
+                  <i class='bx bx-chevron-down'></i>
+               </button>
+            </div>
+         </div>
+
+         <div class="products-grid">
+            <!-- Product Card -->
+            <div class="product-card">
+               <div class="product-header">
+                  <span class="stock-badge">Kam zaxira</span>
+               </div>
+               <div class="product-info">
+                  <div class="product-name">SSD 512GB</div>
+                  <div class="product-category">SSD</div>
+                  <div class="product-price">Narxi: 700000.00 so'm</div>
+                  <div class="product-stock">Zaxira: 9</div>
+                  <div class="product-category-tag">Kategoriya: Memory</div>
+               </div>
+               <div class="product-actions">
+                  <button class="edit-btn">
+                     <i class='bx bx-edit'></i>
+                     Tahrirlashni ko'rish
+                  </button>
+                  <button class="delete-btn">
+                     <i class='bx bx-trash'></i>
+                  </button>
+               </div>
+            </div>
+
+            <!-- Product Card -->
+            <div class="product-card">
+               <div class="product-header">
+                  <span class="stock-badge">Kam zaxira</span>
+               </div>
+               <div class="product-info">
+                  <div class="product-name">SSD 512GB</div>
+                  <div class="product-category">SSD</div>
+                  <div class="product-price">Narxi: 700000.00 so'm</div>
+                  <div class="product-stock">Zaxira: 9</div>
+                  <div class="product-category-tag">Kategoriya: Memory</div>
+               </div>
+               <div class="product-actions">
+                  <button class="edit-btn">
+                     <i class='bx bx-edit'></i>
+                     Tahrirlashni ko'rish
+                  </button>
+                  <button class="delete-btn">
+                     <i class='bx bx-trash'></i>
+                  </button>
+               </div>
+            </div>
+
+            <div class="product-card">
+               <div class="product-header">
+                  <span class="stock-badge">Kam zaxira</span>
+               </div>
+               <div class="product-info">
+                  <div class="product-name">SSD 512GB</div>
+                  <div class="product-category">SSD</div>
+                  <div class="product-price">Narxi: 700000.00 so'm</div>
+                  <div class="product-stock">Zaxira: 9</div>
+                  <div class="product-category-tag">Kategoriya: Memory</div>
+               </div>
+               <div class="product-actions">
+                  <button class="edit-btn">
+                     <i class='bx bx-edit'></i>
+                     Tahrirlashni ko'rish
+                  </button>
+                  <button class="delete-btn">
+                     <i class='bx bx-trash'></i>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Mahsulot qo'shish modali -->
+      <div id="addProductModal" class="modal">
+         <div class="modal-content product-modal">
+            <div class="modal-header">
+               <div class="back-button">
+                  <i class='bx bx-arrow-back'></i>
+                  <span>Mahsulotlarga qaytish</span>
+               </div>
+               <h2>Yangi mahsulot qo'shish</h2>
+               <p>Inventaringizga yangi mahsulot yozing</p>
+            </div>
+
+            <form class="product-form">
+               <div class="form-group">
+                  <label>Mahsulot nomi</label>
+                  <input type="text" placeholder="SSD 512GB" class="form-control">
+               </div>
+
+               <div class="form-group">
+                  <label>Tavsif</label>
+                  <textarea class="form-control" placeholder="Mahsulotni tasvirlang..."></textarea>
+               </div>
+
+               <div class="form-row">
+                  <div class="form-group half">
+                     <label>Narxi</label>
+                     <div class="price-input">
+                        <span class="currency">$</span>
+                        <input type="number" value="0.00" step="0.01" class="form-control">
+                     </div>
+                  </div>
+
+                  <div class="form-group half">
+                     <label>Miqdori</label>
+                     <input type="number" value="0" class="form-control">
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <label>Kategoriya</label>
+                  <div class="select-wrapper">
+                     <select class="form-control">
+                        <option value="">Kategoriyani tanlang</option>
+                        <option value="electronics">Elektronika</option>
+                        <option value="computers">Kompyuterlar</option>
+                     </select>
+                     <i class='bx bx-chevron-down'></i>
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <label>Mahsulot rasmlari</label>
+                  <div class="file-upload">
+                     <input type="file" id="productImages" multiple accept="image/*">
+                     <label for="productImages">
+                        <i class='bx bx-upload'></i>
+                        <span>Rasmlarni yuklash</span>
+                     </label>
+                  </div>
+               </div>
+
+               <div class="form-actions">
+                  <button type="button" class="btn btn-secondary" onclick="closeProductModal()">Bekor qilish</button>
+                  <button type="submit" class="btn btn-primary">
+                     <i class='bx bx-check'></i>
+                     Mahsulot qo'shish
+                  </button>
+               </div>
+            </form>
+         </div>
+      </div>
+
+      <div id="addProductContent" class="container" style="display: none;">
+         <div class="product-page">
+            <div class="page-header">
+               <div class="back-button" onclick="showProductsPage()">
+                  <i class='bx bx-arrow-back'></i>
+                  <span>Mahsulotlarga qaytish</span>
+               </div>
+               <h2>Yangi mahsulot qo'shish</h2>
+               <p>Inventaringizga yangi mahsulot yozing</p>
+            </div>
+
+            <div class="product-form-container">
+               <form class="product-form">
+                  <div class="form-group">
+                     <label>Mahsulot nomi</label>
+                     <input type="text" placeholder="SSD 512GB" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                     <label>Tavsif</label>
+                     <textarea class="form-control" placeholder="Mahsulotni tasvirlang..."></textarea>
+                  </div>
+
+                  <div class="form-row">
+                     <div class="form-group half">
+                        <label>Narxi</label>
+                        <div class="price-input">
+                           <span class="currency">$</span>
+                           <input type="number" value="0.00" step="0.01" class="form-control">
+                        </div>
+                     </div>
+
+                     <div class="form-group half">
+                        <label>Miqdori</label>
+                        <input type="number" value="0" class="form-control">
+                     </div>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Kategoriya</label>
+                     <div class="select-wrapper">
+                        <select class="form-control">
+                           <option value="">Kategoriyani tanlang</option>
+                           <option value="electronics">Elektronika</option>
+                           <option value="computers">Kompyuterlar</option>
+                        </select>
+                        <i class='bx bx-chevron-down'></i>
+                     </div>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Mahsulot rasmlari</label>
+                     <div class="file-upload">
+                        <input type="file" id="productImages" multiple accept="image/*">
+                        <label for="productImages">
+                           <i class='bx bx-upload'></i>
+                           <span>Rasmlarni yuklash</span>
+                        </label>
+                     </div>
+                  </div>
+
+                  <div class="form-actions">
+                     <button type="button" class="btn btn-secondary" onclick="showProductsPage()">Bekor
+                        qilish</button>
+                     <button type="submit" class="btn btn-primary">
+                        <i class='bx bx-check'></i>
+                        Mahsulot qo'shish
+                     </button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+
+      <div id="editProductContent" class="container" style="display: none;">
+         <div class="product-page">
+            <div class="page-header">
+               <div class="header-top">
+                  <div class="back-button" onclick="showProductsPage()">
+                     <i class='bx bx-arrow-back'></i>
+                     <span>Mahsulotlarga qaytish</span>
+                  </div>
+                  <button class="btn btn-danger">
+                     <i class='bx bx-trash'></i>
+                     Mahsulotni o'chirish
+                  </button>
+               </div>
+               <h2>SSD 512GB</h2>
+               <p>Mahsulot tafsilotlari</p>
+            </div>
+
+            <div class="product-details">
+               <div class="detail-item">
+                  <span class="detail-label">Nomi:</span>
+                  <span class="detail-value">SSD 512GB</span>
+               </div>
+
+               <div class="detail-item">
+                  <span class="detail-label">Tavsif:</span>
+                  <span class="detail-value">SSD</span>
+               </div>
+
+               <div class="detail-item">
+                  <span class="detail-label">Narxi:</span>
+                  <span class="detail-value">700,000 so'm</span>
+               </div>
+
+               <div class="detail-item">
+                  <span class="detail-label">Zaxira:</span>
+                  <span class="detail-value">9</span>
+               </div>
+
+               <div class="detail-item">
+                  <span class="detail-label">Kategoriya:</span>
+                  <span class="detail-value">Memory</span>
+               </div>
+
+               <div class="detail-item">
+                  <span class="detail-label">Yaratilgan:</span>
+                  <span class="detail-value">2025-05-22 14:56:13</span>
+               </div>
+
+               <div class="detail-item">
+                  <span class="detail-label">Yangilangan:</span>
+                  <span class="detail-value">2025-05-22 14:56:13</span>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div id="requestsContent" class="container" style="display: none;">
+         <div class="requests-header">
+            <div class="header-main">
+               <h1>E'lonlar</h1>
+               <p>Xizmat e'lonlarini ko'rib chiqing va boshqaring</p>
+            </div>
+            <div class="header-actions">
+               <a href="#" class="menu-settings">
+                  <i class='bx bx-cog'></i>
+                  Menyu sozlamalari
+               </a>
+            </div>
+         </div>
+
+         <div class="search-section">
+            <div class="search-box">
+               <i class='bx bx-search'></i>
+               <input type="text" placeholder="E'lonlarni qidiring...">
+            </div>
+            <div class="filter-group">
+               <button class="filter-btn">
+                  <span>Barcha...</span>
+                  <i class='bx bx-chevron-down'></i>
+               </button>
+               <button class="filter-btn">
+                  <span>Amal...</span>
+                  <i class='bx bx-chevron-down'></i>
+               </button>
+            </div>
+         </div>
+
+         <div class="announcements-section">
+            <h2>Barcha e'lonlar</h2>
+
+            <div class="announcements-grid">
+               <!-- Dynamic content will be loaded here -->
+            </div>
+         </div>
+      </div>
+
+      <!-- E'lon tafsilotlari section -->
+      <div id="announcementDetailsContent" class="container" style="display: none;">
+         <div class="details-header">
+            <div class="back-button" onclick="showRequestsPage()">
+               <i class='bx bx-arrow-back'></i>
+               <span>E'lonlarga qaytish</span>
+            </div>
+            <div class="header-content">
+               <h2>Buyurtma: Uskuna - Nuriddinov Nodir</h2>
+               <p class="date">Joylashtirilgan: 2025-05-22 14:48:35</p>
+            </div>
+         </div>
+
+         <div class="details-content">
+            <!-- Chap panel - Grafik -->
+            <div class="details-left">
+               <div class="graph-container">
+                  <div class="main-graph">
+                     <img src="./assets/images/main-graph.png" alt="Statistika grafigi"
+                        style="width: 100%; height: 100%; object-fit: contain;">
+                  </div>
+                  <div class="mini-graph">
+                     <img src="./assets/images/mini-graph.png" alt="Kichik grafik"
+                        style="width: 100%; height: 100%; object-fit: contain;">
+                  </div>
+                  <h3>E'lon tafsilotlari</h3>
+                  <p>Ko'k oyna chiqib qoldi</p>
+               </div>
+            </div>
+
+            <!-- O'ng panel - Ma'lumotlar -->
+            <div class="details-right">
+               <div class="details-section">
+                  <h3>E'lon tafsilotlari</h3>
+                  <div class="info-group">
+                     <p class="info-label">Joylashtirilgan</p>
+                     <p class="info-value">2025-05-22 14:48:35</p>
+                  </div>
+                  <div class="info-group">
+                     <p class="info-label">Joylashtirivchi</p>
+                     <p class="info-value">Nuriddinov Nodir</p>
+                  </div>
+                  <div class="info-group">
+                     <p class="info-label">Aloqa email</p>
+                     <p class="info-value">gameclub2005@gmail.com</p>
+                  </div>
+               </div>
+
+               <div class="actions-section">
+                  <h3>Amallar</h3>
+                  <div class="action-group">
+                     <label>Tamirlash yakunlash vaqti (soat)</label>
+                     <input type="number" placeholder="24" min="1">
+                  </div>
+                  <div class="action-group">
+                     <label>Tamirlash narxi (so'm)</label>
+                     <input type="number" placeholder="200000" min="0">
+                  </div>
+                  <div class="action-group">
+                     <label>Mahsulot qo'shish</label>
+                     <div class="product-select">
+                        <select>
+                           <option value="">Mahsulotni tanlang</option>
+                           <option value="ssd">SSD 512GB</option>
+                           <!-- Boshqa mahsulotlar -->
+                        </select>
+                     </div>
+                  </div>
+
+                  <div class="selected-products">
+                     <div class="product-item">
+                        <span>SSD 512GB</span>
+                        <input type="number" value="1" min="1">
+                        <button class="remove-product">
+                           <i class='bx bx-x'></i>
+                        </button>
+                     </div>
+                  </div>
+
+                  <div class="action-buttons">
+                     <button class="btn-primary mahsulot-qoshish">
+                        Mahsulot qo'shish
+                     </button>
+                     <button class="btn-outline qabul-qilish">
+                        <i class='bx bx-check'></i>
+                        Qabul qilish
+                     </button>
+                     <button class="btn-danger rad-etish">
+                        <i class='bx bx-x'></i>
+                        Rad etish
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Statistika section -->
+      <div id="statisticsContent" class="container" style="display: none;">
+         <div class="statistics-header">
+            <h1>Statistika</h1>
+            <p>Tizim statistikasini va tendensiyalarn tahlil qilish</p>
+         </div>
+
+         <div class="stats-overview">
+            <div class="stat-card">
+               <div class="stat-info">
+                  <p>Jami buyurtmalar</p>
+                  <h2>2</h2>
+                  <small>O'tgan oydan +10%</small>
+               </div>
+               <div class="stat-icon">
+                  <i class='bx bx-calendar-check'></i>
+               </div>
+            </div>
+
+            <div class="stat-card">
+               <div class="stat-info">
+                  <p>Jami mijozlar</p>
+                  <h2>3</h2>
+                  <small>Bu hafta +4 yangi mijoz</small>
+               </div>
+               <div class="stat-icon">
+                  <i class='bx bx-check-circle'></i>
+               </div>
+            </div>
+
+            <div class="stat-card">
+               <div class="stat-info">
+                  <p>Sotilgan mahsulotlar</p>
+                  <h2>1</h2>
+                  <small>O'tgan oydan +15%</small>
+               </div>
+               <div class="stat-icon">
+                  <i class='bx bx-package'></i>
+               </div>
+            </div>
+
+            <div class="stat-card">
+
+               <div class="stat-info">
+                  <p>Daromad</p>
+                  <h2>$0</h2>
+                  <small>O'tgan oydan +0%</small>
+               </div>
+               <div class="stat-icon">
+                  <i class='bx bx-dollar'></i>
+               </div>
+            </div>
+         </div>
+
+         <div class="chart-section">
+            <div class="chart-header">
+               <h2>Buyurtmalar statistikasi</h2>
+               <div class="chart-filters">
+                  <button class="active">Haftalik</button>
+                  <button>Oylik</button>
+                  <button>Yillik</button>
+               </div>
+            </div>
+
+            <div class="chart-container">
+               <canvas id="ordersChart"></canvas>
+            </div>
+
+            <div class="chart-tabs">
+               <button class="tab-btn active">Buyurtmalar</button>
+               <button class="tab-btn">Mahsulotlar</button>
+               <button class="tab-btn">Foydalanuvchilar</button>
+            </div>
+         </div>
+         <div class="sub-charts">
+            <!-- Buyurtma bajarilish darajasi -->
+            <div class="chart-card">
+               <div class="chart-card-header">
+                  <h3>Buyurtma bajarilish darajasi</h3>
+                  <p>Buyurtmalarning muvaffaqiyat bajarilgan foizi</p>
+               </div>
+               <div class="chart-card-body">
+                  <canvas id="completionRateChart"></canvas>
+               </div>
+            </div>
+
+            <!-- Buyurtma holati taqsimoti -->
+            <div class="chart-card">
+               <div class="chart-card-header">
+                  <h3>Buyurtma holati taqsimoti</h3>
+                  <p>Barcha buyurtmalarning joriy holati</p>
+               </div>
+               <div class="chart-card-body">
+                  <canvas id="statusDistributionChart"></canvas>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Foydalanuvchilar section -->
+      <div id="usersContent" class="container" style="display: none;">
+         <div class="users-header">
+            <div class="header-left">
+               <h1>Foydalanuvchilar</h1>
+               <p>Tizim foydalanuvchilari va ularning rollarini boshqarish</p>
+            </div>
+            <div class="header-right">
+               <button class="btn btn-primary" id="addUserBtn">
+                  <i class='bx bx-plus'></i>
+                  Foydalanuvchi qo'shish
+               </button>
+            </div>
+         </div>
+
+         <div class="users-filters">
+            <div class="search-box">
+               <i class='bx bx-search'></i>
+               <input type="text" placeholder="Foydalanuvchilarni qidirish...">
+            </div>
+            <div class="filter-group">
+               <button class="filter-btn">
+                  <span>Barcha...</span>
+                  <i class='bx bx-chevron-down'></i>
+               </button>
+               <button class="filter-btn">
+                  <span>Saralash (A-Z)</span>
+                  <i class='bx bx-chevron-down'></i>
+               </button>
+            </div>
+         </div>
+
+         <div class="users-table">
+            <div class="table-header">
+               <h2>Foydalanuvchilarni boshqarish</h2>
+               <p>Barcha tizim foydalanuvchilarni ko'rib va boshqaring</p>
+            </div>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Foydalanuvchi nomi</th>
+                     <th>Aloqa</th>
+                     <th>Rol</th>
+                     <th>Qo'shilgan sana</th>
+                     <th>Amallar</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Admin uchun</td>
+                     <td>
+                        <div class="contact-info">
+                           <span>admin@gmail.com</span>
+                           <span>+998200066626</span>
+                        </div>
+                     </td>
+                     <td><span class="role-badge admin">Admin</span></td>
+                     <td>Invalid Date</td>
+                     <td>
+                        <div class="action-buttons">
+                           <button class="edit-btn" title="Tahrirlash">
+                              <i class='bx bx-edit-alt'></i>
+                           </button>
+                           <button class="delete-btn" title="O'chirish">
+                              <i class='bx bx-trash'></i>
+                           </button>
+                        </div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Akramjonov</td>
+                     <td>
+                        <div class="contact-info">
+                           <span>osodbekakramjonov7@gmail.com</span>
+                           <span>+998200066630</span>
+                        </div>
+                     </td>
+                     <td><span class="role-badge client">client</span></td>
+                     <td>Invalid Date</td>
+                     <td>
+                        <div class="action-buttons">
+                           <button class="edit-btn" title="Tahrirlash">
+                              <i class='bx bx-edit-alt'></i>
+                           </button>
+                           <button class="delete-btn" title="O'chirish">
+                              <i class='bx bx-trash'></i>
+                           </button>
+                        </div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Nuriddinov Nodir</td>
+                     <td>
+                        <div class="contact-info">
+                           <span>gameclub2005@gmail.com</span>
+                           <span>+998200066629</span>
+                        </div>
+                     </td>
+                     <td><span class="role-badge client">client</span></td>
+                     <td>Invalid Date</td>
+                     <td>
+                        <div class="action-buttons">
+                           <button class="edit-btn" title="Tahrirlash">
+                              <i class='bx bx-edit-alt'></i>
+                           </button>
+                           <button class="delete-btn" title="O'chirish">
+                              <i class='bx bx-trash'></i>
+                           </button>
+                        </div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </section>
+
+   <div id="logoutModal" class="modal">
+      <div class="modal-content">
+         <h3>Admin panel</h3>
+         <p>Hisobingizdan chiqmoqchimisiz?</p>
+         <div class="modal-buttons">
+            <button onclick="confirmLogout()" class="chiqish">Chiqish</button>
+            <button onclick="closeModal()" class="bekor-qilish">Bekor qilish</button>
+         </div>
+      </div>
+   </div>
+
+   <!-- O'chirish modali -->
+   <div id="deleteModal" class="modal">
+      <div class="modal-content">
+         <h3>Buyurtmani o'chirish</h3>
+         <p>Ushbu buyurtmani o'chirmoqchimisiz?</p>
+         <div class="modal-buttons">
+            <button onclick="confirmDelete()" class="chiqish">O'chirish</button>
+            <button onclick="closeDeleteModal()" class="bekor-qilish">Bekor qilish</button>
+         </div>
+      </div>
+   </div>
+
+   <script src="./assets/js/admin-panel.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>

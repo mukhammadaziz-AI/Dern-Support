@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Emailni Tasdiqlash</title>
+    <link rel="stylesheet" href="/assets/css/signup.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container" id="code-container">
+            <h2>Email tasdiqlash</h2>
+            <p class="parra">Emailga yuborilgan 4 xonali kodni kiriting:</p>
+            <span id="user-email"></span>
+
+            <p id="resend-text" class="hidden">Qayta urinish</p>
+
+            <form id="code-form">
+                <div class="input-wrapper">
+                    <input type="text" id="code" placeholder="4 xonali kod" maxlength="4" pattern="\d{4}"
+                        inputmode="numeric">
+                    <span id="timer" class="timer-inside">60s</span>
+                </div>
+
+                <button type="submit">Tasdiqlash</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/assets/js/verify.js"></script>
+</body>
+
+</html>

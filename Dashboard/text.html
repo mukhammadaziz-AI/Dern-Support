@@ -1,0 +1,189 @@
+<!-- Mahsulot qo'shish modali -->
+   <div id="addProductModal" class="modal">
+      <div class="modal-content product-modal">
+         <div class="modal-header">
+            <div class="back-button">
+               <i class='bx bx-arrow-back'></i>
+               <span>Mahsulotlarga qaytish</span>
+            </div>
+            <h2>Yangi mahsulot qo'shish</h2>
+            <p>Inventaringizga yangi mahsulot yozing</p>
+         </div>
+
+         <form class="product-form">
+            <div class="form-group">
+               <label>Mahsulot nomi</label>
+               <input type="text" placeholder="SSD 512GB" class="form-control">
+            </div>
+
+            <div class="form-group">
+               <label>Tavsif</label>
+               <textarea class="form-control" placeholder="Mahsulotni tasvirlang..."></textarea>
+            </div>
+
+            <div class="form-row">
+               <div class="form-group half">
+                  <label>Narxi</label>
+                  <div class="price-input">
+                     <span class="currency">$</span>
+                     <input type="number" value="0.00" step="0.01" class="form-control">
+                  </div>
+               </div>
+
+               <div class="form-group half">
+                  <label>Miqdori</label>
+                  <input type="number" value="0" class="form-control">
+               </div>
+            </div>
+
+            <div class="form-group">
+               <label>Kategoriya</label>
+               <div class="select-wrapper">
+                  <select class="form-control">
+                     <option value="">Kategoriyani tanlang</option>
+                     <option value="electronics">Elektronika</option>
+                     <option value="computers">Kompyuterlar</option>
+                  </select>
+                  <i class='bx bx-chevron-down'></i>
+               </div>
+            </div>
+
+            <div class="form-group">
+               <label>Mahsulot rasmlari</label>
+               <div class="file-upload">
+                  <input type="file" id="productImages" multiple accept="image/*">
+                  <label for="productImages">
+                     <i class='bx bx-upload'></i>
+                     <span>Rasmlarni yuklash</span>
+                  </label>
+               </div>
+            </div>
+
+            <div class="form-actions">
+               <button type="button" class="btn btn-secondary" onclick="closeProductModal()">Bekor qilish</button>
+               <button type="submit" class="btn btn-primary">
+                  <i class='bx bx-check'></i>
+                  Mahsulot qo'shish
+               </button>
+            </div>
+         </form>
+      </div>
+   </div>
+
+----------------------------------------------------------------
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color-light);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product-card {
+    background: var(--sidebar-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.product-category {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.product-price {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.product-stock {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.product-category-tag {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--primary-color-light);
+}
+
+.stock-badge {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.edit-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--tran-03);
+}
+
+.edit-btn:hover {
+    color: var(--primary-color);
+}
+
+.edit-btn i {
+    font-size: 16px;
+}
+
+/* Dark mode adjustments */
+body.dark .stock-badge {
+    background-color: rgba(255, 243, 205, 0.1);
+    color: #ffc107;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-card {
+        margin: 0 10px;
+    }
+}

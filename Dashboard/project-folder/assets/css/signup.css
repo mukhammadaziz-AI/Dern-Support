@@ -1,0 +1,206 @@
+body {
+    padding: 0;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background: white;
+    padding: 15px 70px 25px 70px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+p {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.checkbox {
+    margin-bottom: 15px;
+}
+
+.checkbox label {
+    font-weight: normal;
+}
+
+.confirm-password {
+    margin-top: 10px;
+}
+
+#password {
+    margin-bottom: 5px;
+}
+
+form {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.politics {
+    text-decoration: underline;
+}
+
+.login {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.account-type {
+    margin-bottom: 15px;
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#business-form {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+.timer {
+    font-weight: bold;
+    margin-top: 10px;
+    color: red;
+}
+
+.code-form {
+    margin-top: 20px;
+}
+
+#code {
+    width: 94%;
+}
+
+#code-container {
+    padding: 10px 35px 30px 35px;
+}
+
+#user-email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(214, 0, 0);
+    padding-bottom: 50px;
+}
+
+.parra {
+    margin: 20px 0 7px 0;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#code {
+    width: 100%;
+    padding-right: 70px;
+}
+
+.timer-inside {
+    position: absolute;
+    right: 10px;
+    color: gray;
+    cursor: pointer;
+    top: 16px;
+}
+
+#resend-text {
+    padding: 0;
+    text-align: left;
+    margin: 0;
+}
+
+.big-refresh {
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: -1px;
+    color: red;
+}
+
+.h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#fullname, #password, #confirm, #email, #phone {
+    width: 94%;
+}
+
+.admin-container {
+    padding: 15px 50px 30px 50px;
+}

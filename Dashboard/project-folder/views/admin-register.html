@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin registration</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <link rel="stylesheet" href="./assets/css/signup.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container admin-container" id="register-container">
+            <h2 class="h2">Admin ro'yxatdan o'tish</h2>
+
+            <form id="admin-register" method="post" action="/admin-register">
+                <label for="fullname">To'liq ism</label>
+                <input type="text" name="fullname" id="fullname" placeholder="To'liq ismingiz ..." required>
+
+                <label for="password">Parol</label>
+                <input type="password" name="password" id="password" placeholder="********" required>
+
+                <label for="confirm" class="confirm-password">Parolni tasdiqlang</label>
+                <input type="password" name="confirmPassword" id="confirm" placeholder="********" required>
+
+                <button type="submit">Ro'yxatdan o'tish</button>
+
+                <div class="link">
+                    Hisobingiz bormi? <a href="/admin-login" class="login">Tizimga kirish</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./assets/js/signup.js"></script>
+</body>
+
+</html>

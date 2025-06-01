@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panelga Kirish</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/admin-login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <img src="./assets/images/login-rounded.png" alt="login-icon">
+        <h2>Admin panelga kirish</h2>
+        <form method="POST" action="/admin-login">
+
+            <div class="input-group input-icon">
+                <label for="username">Foydalanuvchi ismi</label>
+                <i class="ri-user-3-line"></i>
+                <input type="text" id="username" name="fullname" placeholder="To'liq ismingiz ..." required>
+            </div>
+
+            <div class="input-group input-icon password">
+                <label for="password">Parol</label>
+                <i class="ri-lock-2-line"></i>
+                <input type="password" id="password" name="password" placeholder="********" required>
+            </div>
+
+            <button class="login-btn" type="submit">Tizimga kirish</button>
+
+            <div class="link">
+                Hisobingiz bormi? <a href="/admin-register" class="login">Ro'yxatdan o'tish</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

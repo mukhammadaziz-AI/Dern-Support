@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dern-Support</title>
+    <link rel="stylesheet" href="./assets/css/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <div class="nav-bar">
+            <div class="logo">
+                <i class="ri-supabase-fill"></i>
+                Dern-<strong>Support</strong>
+            </div>
+            <nav class="nav-linkss">
+                <a href="/user-panel" class="active">Asosiy</a>
+                <a href="#haqida">Haqimizda</a>
+                <a href="#xizmatlar">Xizmatlarimiz</a>
+                <a href="#boglanish">Bog'lanish</a>
+                <a href="#sorov">So'rovlar</a>
+                <a href="#savollar">Savollar</a>
+            </nav>
+
+            <div class="profile-menu">
+                <div class="profile-wrapper">
+                    <button class="profile-button" onclick="toggleDropdown()">
+                        <img src="./assets/images/logo.png" alt="Avatar" class="avatar">
+                    </button>
+                    <div class="dropdown" id="dropdown">
+                        <a href="#">
+                            <i class='bx bx-user icons'></i>
+                            Mening profilim
+                        </a>
+                        <a href="" id="survey-link">
+                            <i class='bx bx-comment-check icons'></i>
+                            So'rovnomalarim
+                        </a>
+                        <a href="#">
+                            <i class='bx bx-log-out icons'></i>
+                            Tizimdan chiqish
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero-text">
+                <h1>IT mutaxassisi yordami kerak bo'lsa, biz har doim siz bilanmiz</h1>
+                <p>Bizning qo'llab-quvvatlash guruhi tizimlaringizni ishonchli va xavfsiz saqlashga qaratilgan ilg'or va
+                    tezkor yechimlarni taqdim etadi.</p>
+                <div class="hero-buttons">
+                    <button onclick="window.location.href='#sorov'">Buyurtma berish</button>
+                </div>
+            </div>
+            <div class="hero-bg">
+                <img src="./assets/images/background-img.png" alt="Technical Support">
+            </div>
+        </section>
+
+        <section id="haqida" class="about">
+            <h2>Haqimizda</h2>
+            <p>Bizning malakali va tajribali qo'llab-quvvatlash jamoamiz sizning IT tizimlaringiz doimiy ravishda
+                barqaror,
+                xavfsiz va uzluksiz ishlashini ta'minlash uchun tezkor, ishonchli hamda ehtiyojlaringizni oldindan
+                hisobga
+                olgan holda faol echimlar bilan xizmat ko'rsatadi.</p>
+            <div class="features">
+                <div>🔧 Darnhol yechimlar</div>
+                <div>💰 Ma'qul narx</div>
+                <div>📈 Samarali tajriba</div>
+            </div>
+            <div class="about-imgs">
+                <img src="./assets/images/technicians.png" alt="Texnik jamoa">
+                <img src="./assets/images/master-hardware.png" alt="Hamkorlik">
+                <img src="./assets/images/master-hardware.png" alt="Hamkorlik">
+                <img src="./assets/images/master-hardware.png" alt="Hamkorlik">
+                <img src="./assets/images/master-hardware.png" alt="Hamkorlik">
+            </div>
+        </section>
+
+        <section id="xizmatlar" class="services">
+            <h2>Xizmatlarimiz</h2>
+            <div class="service-items">
+                <div>
+                    <strong>
+                        <i class="ri-settings-3-line"></i>
+                        Tarmoq sozlamalari
+                    </strong>
+                    <br />
+                    Uy va ofis tarmoqlari uchun sozlash va xavfsizlikni
+                    ta'minlash.
+                </div>
+                <div>
+                    <strong>
+                        <i class="ri-tools-line"></i>
+                        Uskuna qo'llab-quvvatlash
+                    </strong>
+                    <br />
+                    Elektron qurilmalarni sozlash va nosozliklarni
+                    tuzatish.
+                </div>
+                <div>
+                    <strong>
+                        <i class="ri-code-s-slash-line"></i>
+                        Dasturiy yechimlar
+                    </strong>
+                    <br />
+                    Dasturlarni sozlash va muammolarni hal qilish.
+                </div>
+                <div>
+                    <strong>
+                        <i class="ri-database-2-fill"></i>
+                        Ma'lumotlarni qayta tiklash
+                    </strong>
+                    <br />
+                    Yo'qolgan yoki o'chirilgan ma'lumotlarni
+                    qaytarish.
+                </div>
+                <div>
+                    <strong>
+                        <i class="ri-git-repository-private-line"></i>
+                        Xavfsizlik xizmatlari
+                    </strong>
+                    <br />
+                    Ma'lumotlaringizni himoya qilish.
+                </div>
+            </div>
+        </section>
+
+        <section id="boglanish" class="contact-section">
+            <div class="contact-overlay">
+                <h2>Biz bilan bog'lanish</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="ri-mail-line"></i>
+                        <a href="mailto: info@dernsupport.com" class="mail">
+                            <p>info@dernsupport.com</p>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="ri-phone-fill"></i>
+                        <a href="#" class="mail">
+                            <p>+998 90 206 77 16</p>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="ri-map-pin-2-line"></i>
+                        <a href="#" class="mail">
+                            <p>12/1 Yangi Sergeli Road</p>
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="ri-time-line"></i>
+                        <a href="#" class="mail">
+                            <p>7:00 – 21:30</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="sorov" class="support-form">
+            <h2>Texnik yordam so'rovi</h2>
+            <form>
+                <div class="form-wrapper">
+                    <!-- Tanlovlar -->
+                    <div class="form-types">
+                        <!-- Bu yerga icon qo'ysa bo'ladi: ex. <i class="icon-network"></i> -->
+                        <button type="button">
+                            <i class="ri-settings-3-line"></i>
+                            Tarmoq sozlamasi
+                        </button>
+                        <button type="button">
+                            <i class="ri-tools-line"></i>
+                            Uskuna qo'llab-quvvatlash
+                        </button>
+                        <button type="button" class="active">
+                            <i class="ri-code-s-slash-line"></i>
+                            Dasturiy yechim
+                        </button>
+                        <button type="button">
+                            <i class="ri-database-2-fill"></i>
+                            Ma'lumotlarni tiklash
+                        </button>
+                        <button type="button">
+                            <i class="ri-git-repository-private-line"></i>
+                            Xavfsizlik xizmati
+                        </button>
+                    </div>
+
+                    <!-- Forma -->
+                    <div class="form-contact">
+                        <input type="text" placeholder="+998 90 123 45 67" />
+                        <textarea placeholder="Muammo haqida xabar ..."></textarea>
+                        <button type="submit" class="btn">Yuborish</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+
+        <section id="savollar" class="faq">
+            <h2>Ko'p beriladigan savollar</h2>
+            <details>
+                <summary>1. Xizmatlaringiz narxlari qanday?</summary>
+                <p class="faq-p">Narxlar mijozning ehtiyojlari va ish murakkabligiga qarab belgilanadi.</p>
+            </details>
+            <details>
+                <summary>2. Uzoqdan yordam bera olasizmi?</summary>
+                <p class="faq-p">Ha, TeamViewer yoki AnyDesk orqali.</p>
+            </details>
+            <details>
+                <summary>3. Kompyuterim virusga chaligandi, nima qilishim kerak?</summary>
+                <p class="faq-p">Darhol internetdan uziling va murojaat qiling.</p>
+            </details>
+            <details>
+                <summary>4. Kompyuterim isishi ortib ketdi, nima sabab?</summary>
+                <p class="faq-p">Sovutish tizimidagi nosozliklar yoki dasturiy sabablarga ko'ra bo'lishi mumkin.</p>
+            </details>
+            <details>
+                <summary>5. Tasodifan fayllarni o'chirib yubordim, qanday qaytarish mumkin?</summary>
+                <p class="faq-p">Maxsus dasturlar yordamida tiklashga harakat qilamiz.</p>
+            </details>
+            <details>
+                <summary>6. Uyda WiFi sekin ishlayapti, nima qilish kerak?</summary>
+                <p class="faq-p">Router joylashuvini o'zgartirish yoki kuchaytirgich o'rnatishni tavsiya etamiz.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <div class="space-around">
+            <div class="first-item">
+                <h2 class="footer-desc">Kompaniya haqida</h2>
+                <p class="footer-p">Dern-Support - kompyuter texnikasi, dasturiy ta'minot va tarmoq bo'yicha to'liq
+                    qamrovli xizmatlar ko'rsatuvchi ishonchli IT kompaniyasidir.</p>
+                <p class="footer-p">Mijozlar ishonchi - bizning eng muhim qadriyatimiz!</p>
+            </div>
+            <div class="second-item">
+                <h2 class="footer-desc">Navigatsiya</h2>
+                <ul class="ul-links">
+                    <li class="link"><a href="#">Asosiy</a></li>
+                    <li class="link"><a href="#haqida">Haqimizda</a></li>
+                    <li class="link"><a href="#xizmatlar">Xizmatlarimiz</a></li>
+                    <li class="link"><a href="#boglanish">Bog'lanish</a></li>
+                    <li class="link"><a href="#sorov">So'rovlar</a></li>
+                    <li class="link"><a href="#savollar">Savollar</a></li>
+                </ul>
+            </div>
+            <div class="third-item">
+                <h2 class="footer-desc">Aloqa</h2>
+                <ul class="ul-links">
+                    <li class="links">12/1 Yangi Sergeli Road</li>
+                    <li class="links">info@dernsupport.uz</li>
+                    <li class="links">+998 90 206 77 16</li>
+                </ul>
+            </div>
+        </div>
+        <br><br>
+        <hr>
+        <p class="footer-btm">&copy; 2025 Dern-Support. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <script src="./assets/js/home.js"></script>
+</body>
+
+</html>
